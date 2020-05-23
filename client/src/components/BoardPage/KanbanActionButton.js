@@ -4,14 +4,14 @@ import TextareaAutosize from 'react-textarea-autosize';
 import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
-import { addList, addCard } from '../actions';
+import { addList, addCard } from '../../actions';
 
 class KanbanActionButton extends React.Component {
 
     state = {
         formOpen: false,
         text: ""
-    }
+    };
 
     openForm = () => {
         this.setState({
@@ -43,7 +43,7 @@ class KanbanActionButton extends React.Component {
         }
 
         return;
-    }
+    };
 
     handleAddCard = () => {
         const { dispatch, listID } = this.props;
@@ -55,7 +55,7 @@ class KanbanActionButton extends React.Component {
             })
             dispatch(addCard(listID, text));
         }
-    }
+    };
 
     renderAddButton = () => {
         const { list } = this.props;
@@ -79,7 +79,7 @@ class KanbanActionButton extends React.Component {
                 <p>{buttonText}</p>
             </div>
         )
-    }
+    };
 
     renderForm = () => {
         const { list } = this.props;
@@ -125,8 +125,8 @@ class KanbanActionButton extends React.Component {
 
     render() {
         return this.state.formOpen ? this.renderForm() : this.renderAddButton();
-    }
-}
+    };
+};
 
 const styles = {
     openFormButtonGroup: {
